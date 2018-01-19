@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180119 13:26:07.468" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\Users\DELL\PycharmProjects\MiniProject\Postfacebook.robot" id="s1" name="Postfacebook">
+<test id="s1-t1" name="Verify that Login Facebook">
+<kw name="Open Facebook With Chrome">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${GOOGLE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180119 13:26:07.643" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com'</msg>
+<status status="PASS" endtime="20180119 13:26:14.988" starttime="20180119 13:26:07.642"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>facebook</arg>
+</arguments>
+<status status="PASS" endtime="20180119 13:26:15.035" starttime="20180119 13:26:14.989"></status>
+</kw>
+<status status="PASS" endtime="20180119 13:26:15.035" starttime="20180119 13:26:07.642"></status>
+</kw>
+<kw name="Login Facebook">
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="email"]</arg>
+<arg>lukkade_babysza@hotmail.com</arg>
+</arguments>
+<msg timestamp="20180119 13:26:15.036" level="INFO">Typing text 'lukkade_babysza@hotmail.com' into text field '//*[@id="email"]'</msg>
+<status status="PASS" endtime="20180119 13:26:15.779" starttime="20180119 13:26:15.036"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="pass"]</arg>
+<arg>ST5731301072</arg>
+</arguments>
+<msg timestamp="20180119 13:26:15.780" level="INFO">Typing password into text field '//*[@id="pass"]'</msg>
+<status status="PASS" endtime="20180119 13:26:16.201" starttime="20180119 13:26:15.779"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id="u_0_a"]</arg>
+</arguments>
+<msg timestamp="20180119 13:26:16.202" level="INFO">Clicking button '//*[@id="u_0_a"]'.</msg>
+<status status="PASS" endtime="20180119 13:26:30.910" starttime="20180119 13:26:16.201"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Sirin</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" endtime="20180119 13:26:31.106" starttime="20180119 13:26:30.910"></status>
+</kw>
+<status status="PASS" endtime="20180119 13:26:31.106" starttime="20180119 13:26:15.036"></status>
+</kw>
+<kw name="Post Massage In Facebook">
+<tags>
+<tag>done</tag>
+</tags>
+<kw name="Login Facebook">
+<msg timestamp="20180119 13:26:31.110" level="FAIL">Keyword 'Login Facebook' expected 2 arguments, got 0.</msg>
+<status status="FAIL" endtime="20180119 13:26:31.110" starttime="20180119 13:26:31.110"></status>
+</kw>
+<status status="FAIL" endtime="20180119 13:26:31.110" starttime="20180119 13:26:31.109"></status>
+</kw>
+<status status="FAIL" endtime="20180119 13:26:31.111" critical="yes" starttime="20180119 13:26:07.641">Keyword 'Login Facebook' expected 2 arguments, got 0.</status>
+</test>
+<errors>
+<msg timestamp="20180119 13:26:31.128" level="ERROR">Unexpected error: IOError: [Errno 0] Error
+Traceback (most recent call last):
+  File "c:\Python27\lib\site-packages\robot\utils\application.py", line 83, in _execute
+    rc = self.main(arguments, **options)
+  File "c:\Python27\lib\site-packages\robot\run.py", line 445, in main
+    result = suite.run(settings)
+  File "c:\Python27\lib\site-packages\robot\running\model.py", line 248, in run
+    self.visit(runner)
+  File "c:\Python27\lib\site-packages\robot\model\testsuite.py", line 161, in visit
+    visitor.visit_suite(self)
+  File "c:\Python27\lib\site-packages\robot\model\visitor.py", line 88, in visit_suite
+    self.end_suite(suite)
+  File "c:\Python27\lib\site-packages\robot\running\runner.py", line 104, in end_suite
+    self._context.end_suite(ModelCombiner(suite, self._suite))
+  File "c:\Python27\lib\site-packages\robot\running\context.py", line 132, in end_suite
+    self.output.end_suite(suite)
+  File "c:\Python27\lib\site-packages\robot\output\output.py", line 53, in end_suite
+    LOGGER.end_suite(suite)
+  File "c:\Python27\lib\site-packages\robot\output\logger.py", line 175, in end_suite
+    logger.end_suite(suite)
+  File "c:\Python27\lib\site-packages\robot\output\console\verbose.py", line 41, in end_suite
+    self._writer.info(suite.longname, suite.doc)
+  File "c:\Python27\lib\site-packages\robot\output\console\verbose.py", line 86, in info
+    self._write_info()
+  File "c:\Python27\lib\site-packages\robot\output\console\verbose.py", line 90, in _write_info
+    self._stdout.write(self._last_info)
+  File "c:\Python27\lib\site-packages\robot\output\console\highlighting.py", line 51, in write
+    self.stream.write(console_encode(text, stream=self.stream))</msg>
+</errors>
+</robot>
